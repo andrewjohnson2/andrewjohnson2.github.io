@@ -5,7 +5,7 @@ import Header from "./header";
 
 const Body = () => { // eslint-disable-line
   return (
-    <div className="container top">
+    <div className="container top center">
       <div className="row">
         <div className="col">
           <Header top />

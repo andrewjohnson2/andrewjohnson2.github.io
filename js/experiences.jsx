@@ -5,7 +5,7 @@ import Header from './header';
 class Experiences extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="container center">
         <div className="pt-3">
           <Header top={false} />
           <ItemGroup content={'Education'} />

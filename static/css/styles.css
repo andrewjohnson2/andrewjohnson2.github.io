@@ -1,15 +1,19 @@
-/*body,*/
-/*html {*/
-    /*height: 100%;*/
-/*}*/
+body,
+html {
+    height: 70%;
+    width: 80%;
+}
 
 /*body {*/
     /*margin-bottom: 120px; !* Margin bottom by footer height*!*/
 /*}*/
 
-.top {
-    top: 20%;
+.center {
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
+}
+
+.top {
+    top: 20%;
 }

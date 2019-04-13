@@ -59,6 +59,11 @@
       "title": "Euchre Simulator",
       "subtitle": "C++",
       "description": "I created a command line program to simulate the card game Euchre. Up to 4 human players can play with the remaining positions filled by a computer \"player\". The focus of the project was on object orientated programming. This was a school project in the class EECS 280 - Introductory Data Structures at the University of Michigan."
+    },
+    {
+      "title": "New Proj",
+      "subtitle": "C++",
+      "description": "I created a command line program to simulate the card game Euchre. Up to 4 human players can play with the remaining positions filled by a computer \"player\". The focus of the project was on object orientated programming. This was a school project in the class EECS 280 - Introductory Data Structures at the University of Michigan."
     }
   ],
   "Education": [
