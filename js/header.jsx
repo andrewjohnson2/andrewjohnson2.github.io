@@ -26,12 +26,12 @@ class Header extends React.Component { // eslint-disable-line
           </a>
         </h5>
         <div className="pt-2 text-center">
-          <Link role="button" to={{pathname: '/experiences'}} name="button"
+          <Link role="button" to={{pathname: '/#experiences'}} name="button"
                 className="btn btn-outline-primary m-*-auto">My
             Experiences
           </Link>
           &nbsp;
-          <Link role="button" to={{pathname: '/projects'}} name="button" className="btn btn-outline-primary m-*-auto">My
+          <Link role="button" to={{pathname: '/#projects'}} name="button" className="btn btn-outline-primary m-*-auto">My
             Projects
           </Link>
         </div>

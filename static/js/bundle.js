@@ -9727,8 +9727,8 @@ var App = function App() {
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _body2.default }),
-    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/experiences', component: _experiences2.default }),
-    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/projects', component: _projects2.default })
+    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#experiences', component: _experiences2.default }),
+    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#projects', component: _projects2.default })
   );
 };
 
@@ -16557,14 +16557,14 @@ var Header = function (_React$Component) {
           { className: 'pt-2 text-center' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { role: 'button', to: { pathname: '/experiences' }, name: 'button',
+            { role: 'button', to: { pathname: '/#experiences' }, name: 'button',
               className: 'btn btn-outline-primary m-*-auto' },
             'My Experiences'
           ),
           '\xA0',
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { role: 'button', to: { pathname: '/projects' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
+            { role: 'button', to: { pathname: '/#projects' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
             'My Projects'
           )
         )

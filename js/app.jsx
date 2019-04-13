@@ -9,8 +9,8 @@ const App = () => { // eslint-disable-line
   return (
     <Switch>
       <Route exact path={'/'} component={Body} />
-      <Route exact path={'/experiences'} component={Experiences} />
-      <Route exact path={'/projects'} component={Projects} />
+      <Route exact path={'/#experiences'} component={Experiences} />
+      <Route exact path={'/#projects'} component={Projects} />
     </Switch>
   );
 };
