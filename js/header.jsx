@@ -12,7 +12,7 @@ class Header extends React.Component { // eslint-disable-line
 
   render() {
     return (
-      <div>
+      <div style={{ display: 'none' }} id={'title'}>
         <h1 className={`text-center ${this.state.top ? 'display-1' : ''}`} id="name">Andrew Johnson</h1>
         <h5 className="text-center">
           <a href="tel:7022416598">702.241.6598</a>
