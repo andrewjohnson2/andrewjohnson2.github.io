@@ -16559,13 +16559,13 @@ var Header = function (_React$Component) {
           _react2.default.createElement(
             _reactRouterDom.Link,
             { type: 'button', to: { pathname: '/experiences' }, name: 'button',
-              className: 'btn btn-outline-primary m-*-auto' },
+              className: 'btn btn-sm btn-outline-primary m-*-auto' },
             'My Experiences'
           ),
           '\xA0',
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { type: 'button', to: { pathname: '/projects' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
+            { type: 'button', to: { pathname: '/projects' }, name: 'button', className: 'btn btn-sm btn-outline-primary m-*-auto' },
             'My Projects'
           )
         )
