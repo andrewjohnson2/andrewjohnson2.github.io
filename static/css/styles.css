@@ -17,3 +17,10 @@ html {
 .top {
     top: 20%;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  opacity: .5;
+  width: 100%;
+}
