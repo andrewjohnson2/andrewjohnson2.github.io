@@ -16525,7 +16525,7 @@ var Header = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { display: 'none' }, id: 'title' },
+        { id: 'title' },
         _react2.default.createElement(
           'h1',
           { className: 'text-center ' + (this.state.top ? 'display-1' : ''), id: 'name' },

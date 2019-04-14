@@ -1,4 +1,4 @@
 $(function () {
   // $('#title').hide();
-  $('#title').fadeIn(1000);
+  // $('#title').fadeIn(1000);
 });
