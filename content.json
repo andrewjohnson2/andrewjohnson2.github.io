@@ -27,8 +27,8 @@
     },
     {
       "title": "Personal Website",
-      "subtitle": "HTML, CSS, Bootstrap",
-      "description": "I created this static single page website to display my resume and other information online. After many iterations I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website. Additionally, I have created similar websites for other students at Michigan."
+      "subtitle": "HTML, CSS, React, Bootstrap",
+      "description": "I created this static single page website to display my resume and other information online. I used React Routing for client side routing and created a system that reads website content from a JSON file to eliminate constant HTML updates. I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website and I have created similar websites for other students at Michigan."
     },
     {
       "title": "Penetration Test",
