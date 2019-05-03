@@ -11,6 +11,11 @@
       "description": "I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."
     },
     {
+      "title": "MapReduce Implementation",
+      "subtitle": "Python",
+      "description": "I was member of team that implemented a fault tolerant MapReduce framework in Python. I gained experience with Python threads, processes, and sockets during the project."
+    },
+    {
       "title": "Spotify Playlist Creator",
       "subtitle": "Java, Flask, React JS, Bootstrap",
       "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, meduim, and long term and a playlist will be created and added to their Spotify library. The web app can be found at playlist.andrewjohnson.io."
@@ -21,9 +26,14 @@
       "description": "I created a web application to take inputted customer information and store it securely in a NoSQL database. The information is accessed through a web interface."
     },
     {
+      "title": "Music Genre Classfier",
+      "subtitle": "Python",
+      "description": "I worked with a team to create a musical genre classifier with data from the Spotify API. We used the Spotify API to gather audio features and audio metrics about a selection of tracks. We used bayes probability and the probability density function (PDF) to calculate the probability of a track containing certain audio features. 8 genres were included the data set and we achieved an accuracy of 54%."
+    },
+    {
       "title": "Personal Website",
-      "subtitle": "HTML, CSS, React, Bootstrap",
-      "description": "I created this static single page website to display my resume and other information online. I used React Routing for client side routing and created a system that reads website content from a JSON file to eliminate constant HTML updates. I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website and I have created similar websites for other students at Michigan."
+      "subtitle": "HTML, CSS, React JS, Bootstrap",
+      "description": "I created this static single page website to display my resume and other information online. I used React Routing for client side routing and created a system that reads website content from a JSON file to eliminate difficult HTML updates. I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website and I have created a similar website for another student at the University of Michigan."
     },
     {
       "title": "Penetration Test",
@@ -66,7 +76,7 @@
   "Work Experience": [
     {
       "title": "Apple",
-      "subtitle": "Incoming Software Engineering Intern",
+      "subtitle": "Software Engineering Intern",
       "description": "I am very excited about my next opportunity at Apple this upcoming summer. I will be a member of the Apple Maps team."
     },
     {
