@@ -1,0 +1,120 @@
+#!/bin/bash
+
+# stop on errors
+set -e
+
+# check if Atom.io has been downloaded
+if ! [ -x "$(command -v atom)" ]; then
+  echo "First download Atom from https://atom.io/"
+  exit 1
+fi
+
+# install Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install npm
+brew install python
+
+# create the bash files
+echo '#!/bin/bash' > ~/.push
+echo '#!/bin/bash' > ~/.edit
+echo '#!/bin/bash' > ~/.reset
+echo '#!/bin/bash' > ~/.test
+
+# create push file
+echo "git add ." >> ~/.push
+echo "git commit -m \"website content update\"" >> ~/.push
+echo "git push origin master" >> ~/.push
+
+# create test file
+echo "cd ~/Documents/Website"
+echo "open -a \"Google Chrome\" http://localhost:8000" >> ~/.test
+echo "python -m SimpleHTTPServer" >> ~/.test
+
+
+# create reset file
+echo "rm -rf ~/Documents/Website" >> ~/.reset
+echo "mkdir ~/Documents/Website" >> ~/.reset
+echo "cd ~/Documents/Website" >> ~/.reset
+echo "git init" >> ~/.reset
+echo "git remote add origin https://github.com/kylepatmore/kylepatmore.github.io" >> ~/.reset
+echo "git pull origin master" >> ~/.reset
+
+# create edit file
+echo "cd ~/Documents/Website" >> ~/.edit
+echo "atom ." >> ~/.edit
+
+# change and modify to make executable
+chmod +x ~/.push
+chmod +x ~/.test
+chmod +x ~/.reset
+chmod +x ~/.edit
+
+# create alias' to allow easy execution
+echo "alias kyle='~/./.push'" >> .bash_profile
+echo "alias test='~/./.test'" >> .bash_profile
+echo "alias reset='~/./.reset'" >> .bash_profile
+echo "alias edit='~/./.edit'" >> .bash_profile
+
+# reset the new directory
+~/./.reset
+#!/bin/bash
+
+# stop on errors
+set -e
+
+# check if Atom.io has been downloaded
+if ! [ -x "$(command -v atom)" ]; then
+  echo "First download Atom from https://atom.io/"
+  exit 1
+fi
+
+# install Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install npm
+brew install python
+
+# create the bash files
+echo '#!/bin/bash' > ~/.push
+echo '#!/bin/bash' > ~/.edit
+echo '#!/bin/bash' > ~/.reset
+echo '#!/bin/bash' > ~/.test
+
+# create push file
+echo "git add ." >> ~/.push
+echo "git commit -m \"website content update\"" >> ~/.push
+echo "git push origin master" >> ~/.push
+
+# create test file
+echo "cd ~/Documents/Website"
+echo "open -a \"Google Chrome\" http://localhost:8000" >> ~/.test
+echo "python -m SimpleHTTPServer" >> ~/.test
+
+
+# create reset file
+echo "rm -rf ~/Documents/Website" >> ~/.reset
+echo "mkdir ~/Documents/Website" >> ~/.reset
+echo "cd ~/Documents/Website" >> ~/.reset
+echo "git init" >> ~/.reset
+echo "git remote add origin https://github.com/kylepatmore/kylepatmore.github.io" >> ~/.reset
+echo "git pull origin master" >> ~/.reset
+
+# create edit file
+echo "cd ~/Documents/Website" >> ~/.edit
+echo "atom ." >> ~/.edit
+
+# change and modify to make executable
+chmod +x ~/.push
+chmod +x ~/.test
+chmod +x ~/.reset
+chmod +x ~/.edit
+
+# create alias' to allow easy execution
+echo "alias kyle='~/./.push'" >> .bash_profile
+echo "alias test='~/./.test'" >> .bash_profile
+echo "alias reset='~/./.reset'" >> .bash_profile
+echo "alias edit='~/./.edit'" >> .bash_profile
+
+# reset the new directory
+~/./.reset
