@@ -70,19 +70,19 @@
     {
       "title": "University of Michigan",
       "subtitle": "Computer Science Engineering | May 2020 | 3.86/4.00 GPA",
-      "description": "At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won 1 IM Broomball championship."
+      "description": "At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."
     }
   ],
   "Work Experience": [
     {
       "title": "Apple",
       "subtitle": "Software Engineering Intern",
-      "description": "I am very excited about my next opportunity at Apple this upcoming summer. I will be a member of the Apple Maps team."
+      "description": "This past summer I interned at Apple on the Apple Maps team. I worked on the data platform team and created multiple data pipelines to transform and store data. Additionally, I analyzed existing data and made recommendations to improve current processes."
     },
     {
       "title": "Amazon",
       "subtitle": "Software Development Engineering Intern",
-      "description": "Last summer, Summer 2018, I had the opportunity to intern at Amazon as a Software Development Engineering Intern. I spent the summer in Seattle, Washington on the Finance Tech team at Amazon. I had my first experience with full stack web development at Amazon and had the opportunity to build a prototype full stack web application. I designed the application and presented my design to my team during a design review. I then built the application throughout the internship as I experienced the day to day life of a software engineer. At the end of my internship I presented what I created to my team as they could determine the feasibility of building a full scale version of what I created."
+      "description": "Summer 2018, I had the opportunity to intern at Amazon as a Software Development Engineering Intern. I spent the summer in Seattle, Washington on the Finance Tech team at Amazon. I had my first experience with full stack web development at Amazon and had the opportunity to build a prototype full stack web application. I designed the application and presented my design to my team during a design review. I then built the application throughout the internship as I experienced the day to day life of a software engineer. At the end of my internship I presented what I created to my team as they could determine the feasibility of building a full scale version of what I created."
     },
     {
       "title": "Sigma Engineering Solutions",

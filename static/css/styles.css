@@ -1,12 +1,24 @@
 body,
 html {
-    height: 70%;
-    width: 80%;
+    height: 80%;
+    width: 70%;
 }
 
 /*body {*/
     /*margin-bottom: 120px; !* Margin bottom by footer height*!*/
 /*}*/
+
+.wrap {
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 0;
+}
+
+img {
+  cursor: pointer;
+}
 
 .center {
     left: 50%;
