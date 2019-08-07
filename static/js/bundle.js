@@ -394,7 +394,7 @@ exports.NavLink = exports.Link = exports.HashRouter = exports.BrowserRouter = un
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _reactRouter = __webpack_require__(19);
+var _reactRouter = __webpack_require__(18);
 
 Object.keys(_reactRouter).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -406,7 +406,7 @@ Object.keys(_reactRouter).forEach(function (key) {
   });
 });
 
-var _inheritsLoose2 = __webpack_require__(20);
+var _inheritsLoose2 = __webpack_require__(19);
 
 var _inheritsLoose3 = _interopRequireDefault(_inheritsLoose2);
 
@@ -414,25 +414,25 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _history = __webpack_require__(21);
+var _history = __webpack_require__(20);
 
 var _propTypes = __webpack_require__(55);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _tinyWarning = __webpack_require__(13);
+var _tinyWarning = __webpack_require__(12);
 
 var _tinyWarning2 = _interopRequireDefault(_tinyWarning);
 
-var _extends2 = __webpack_require__(14);
+var _extends2 = __webpack_require__(13);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutPropertiesLoose2 = __webpack_require__(22);
+var _objectWithoutPropertiesLoose2 = __webpack_require__(21);
 
 var _objectWithoutPropertiesLoose3 = _interopRequireDefault(_objectWithoutPropertiesLoose2);
 
-var _tinyInvariant = __webpack_require__(15);
+var _tinyInvariant = __webpack_require__(14);
 
 var _tinyInvariant2 = _interopRequireDefault(_tinyInvariant);
 
@@ -718,6 +718,349 @@ if (process.env.NODE_ENV !== 'production') {
 "use strict";
 
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var g;
+
+// This works in non-strict mode
+g = function () {
+	return this;
+}();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function validateFormat(format) {};
+
+if (process.env.NODE_ENV !== 'production') {
+  validateFormat = function validateFormat(format) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  };
+}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
+
+module.exports = invariant;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var emptyFunction = __webpack_require__(7);
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = emptyFunction;
+
+if (process.env.NODE_ENV !== 'production') {
+  var printWarning = function printWarning(format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function warning(condition, format) {
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.indexOf('Failed Composite propType: ') === 0) {
+      return; // Ignore CompositeComponent proptype check.
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
+      }
+
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
+}
+
+module.exports = warning;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var isProduction = process.env.NODE_ENV === 'production';
+function warning(condition, message) {
+  if (!isProduction) {
+    if (condition) {
+      return;
+    }
+
+    var text = "Warning: " + message;
+
+    if (typeof console !== 'undefined') {
+      console.warn(text);
+    }
+
+    try {
+      throw Error(text);
+    } catch (x) {}
+  }
+}
+
+exports.default = warning;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _extends;
+function _extends() {
+  exports.default = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var isProduction = process.env.NODE_ENV === 'production';
+var prefix = 'Invariant failed';
+function invariant(condition, message) {
+  if (condition) {
+    return;
+  }
+
+  if (isProduction) {
+    throw new Error(prefix);
+  } else {
+    throw new Error(prefix + ": " + (message || ''));
+  }
+}
+
+exports.default = invariant;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -803,12 +1146,6 @@ var Header = function (_React$Component) {
             _reactRouterDom.Link,
             { role: 'button', to: { pathname: '/#projects' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
             'My Projects'
-          ),
-          '\xA0',
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { role: 'button', to: { pathname: '/#media' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
-            'Cool Drone Pics'
           )
         )
       );
@@ -827,448 +1164,7 @@ Header.propTypes = {
 exports.default = Header;
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var g;
-
-// This works in non-strict mode
-g = function () {
-	return this;
-}();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1, eval)("this");
-} catch (e) {
-	// This works if the window reference is available
-	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var validateFormat = function validateFormat(format) {};
-
-if (process.env.NODE_ENV !== 'production') {
-  validateFormat = function validateFormat(format) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  };
-}
-
-function invariant(condition, format, a, b, c, d, e, f) {
-  validateFormat(format);
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(format.replace(/%s/g, function () {
-        return args[argIndex++];
-      }));
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-}
-
-module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var emptyFunction = __webpack_require__(8);
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var warning = emptyFunction;
-
-if (process.env.NODE_ENV !== 'production') {
-  var printWarning = function printWarning(format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function warning(condition, format) {
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (format.indexOf('Failed Composite propType: ') === 0) {
-      return; // Ignore CompositeComponent proptype check.
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var isProduction = process.env.NODE_ENV === 'production';
-function warning(condition, message) {
-  if (!isProduction) {
-    if (condition) {
-      return;
-    }
-
-    var text = "Warning: " + message;
-
-    if (typeof console !== 'undefined') {
-      console.warn(text);
-    }
-
-    try {
-      throw Error(text);
-    } catch (x) {}
-  }
-}
-
-exports.default = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _extends;
-function _extends() {
-  exports.default = _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var isProduction = process.env.NODE_ENV === 'production';
-var prefix = 'Invariant failed';
-function invariant(condition, message) {
-  if (condition) {
-    return;
-  }
-
-  if (isProduction) {
-    throw new Error(prefix);
-  } else {
-    throw new Error(prefix + ": " + (message || ''));
-  }
-}
-
-exports.default = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-/***/ }),
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(5);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _content = __webpack_require__(62);
-
-var _content2 = _interopRequireDefault(_content);
-
-var _item = __webpack_require__(63);
-
-var _item2 = _interopRequireDefault(_item);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ItemGroup = function (_React$Component) {
-  _inherits(ItemGroup, _React$Component);
-
-  function ItemGroup(props) {
-    _classCallCheck(this, ItemGroup);
-
-    var _this = _possibleConstructorReturn(this, (ItemGroup.__proto__ || Object.getPrototypeOf(ItemGroup)).call(this, props));
-
-    _this.state = {
-      items: _content2.default[_this.props.content]
-    };
-    return _this;
-  }
-
-  _createClass(ItemGroup, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { className: 'row align-items-center justify-content-center' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col' },
-            _react2.default.createElement(
-              'h2',
-              null,
-              this.props.content
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row align-items-center justify-content-center' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col' },
-            this.state.items.map(function (item) {
-              return _react2.default.createElement(
-                'div',
-                { className: 'pb-4' },
-                _react2.default.createElement(_item2.default, { title: item.title, subtitle: item.subtitle, description: item.description })
-              );
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return ItemGroup;
-}(_react2.default.Component);
-
-ItemGroup.propTypes = {
-  content: _propTypes2.default.string.isRequired // eslint-disable-line
-};
-
-exports.default = ItemGroup;
-
-/***/ }),
-/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1282,7 +1178,7 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1297,7 +1193,7 @@ var _createReactContext = __webpack_require__(38);
 
 var _createReactContext2 = _interopRequireDefault(_createReactContext);
 
-var _inheritsLoose2 = __webpack_require__(20);
+var _inheritsLoose2 = __webpack_require__(19);
 
 var _inheritsLoose3 = _interopRequireDefault(_inheritsLoose2);
 
@@ -1309,13 +1205,13 @@ var _propTypes = __webpack_require__(44);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _tinyWarning = __webpack_require__(13);
+var _tinyWarning = __webpack_require__(12);
 
 var _tinyWarning2 = _interopRequireDefault(_tinyWarning);
 
-var _history = __webpack_require__(21);
+var _history = __webpack_require__(20);
 
-var _tinyInvariant = __webpack_require__(15);
+var _tinyInvariant = __webpack_require__(14);
 
 var _tinyInvariant2 = _interopRequireDefault(_tinyInvariant);
 
@@ -1323,13 +1219,13 @@ var _pathToRegexp = __webpack_require__(52);
 
 var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
 
-var _extends2 = __webpack_require__(14);
+var _extends2 = __webpack_require__(13);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
 var _reactIs = __webpack_require__(3);
 
-var _objectWithoutPropertiesLoose2 = __webpack_require__(22);
+var _objectWithoutPropertiesLoose2 = __webpack_require__(21);
 
 var _objectWithoutPropertiesLoose3 = _interopRequireDefault(_objectWithoutPropertiesLoose2);
 
@@ -2055,7 +1951,7 @@ exports.__RouterContext = context;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2072,7 +1968,7 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2085,7 +1981,7 @@ exports.createPath = exports.parsePath = exports.locationsAreEqual = exports.cre
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _extends2 = __webpack_require__(14);
+var _extends2 = __webpack_require__(13);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
@@ -2097,11 +1993,11 @@ var _valueEqual = __webpack_require__(51);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
-var _tinyWarning = __webpack_require__(13);
+var _tinyWarning = __webpack_require__(12);
 
 var _tinyWarning2 = _interopRequireDefault(_tinyWarning);
 
-var _tinyInvariant = __webpack_require__(15);
+var _tinyInvariant = __webpack_require__(14);
 
 var _tinyInvariant2 = _interopRequireDefault(_tinyInvariant);
 
@@ -3012,7 +2908,7 @@ exports.createPath = createPath;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3036,6 +2932,104 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(5);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _content = __webpack_require__(62);
+
+var _content2 = _interopRequireDefault(_content);
+
+var _item = __webpack_require__(63);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemGroup = function (_React$Component) {
+  _inherits(ItemGroup, _React$Component);
+
+  function ItemGroup(props) {
+    _classCallCheck(this, ItemGroup);
+
+    var _this = _possibleConstructorReturn(this, (ItemGroup.__proto__ || Object.getPrototypeOf(ItemGroup)).call(this, props));
+
+    _this.state = {
+      items: _content2.default[_this.props.content]
+    };
+    return _this;
+  }
+
+  _createClass(ItemGroup, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'row align-items-center justify-content-center' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              this.props.content
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row align-items-center justify-content-center' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col' },
+            this.state.items.map(function (item) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'pb-4' },
+                _react2.default.createElement(_item2.default, { title: item.title, subtitle: item.subtitle, description: item.description })
+              );
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return ItemGroup;
+}(_react2.default.Component);
+
+ItemGroup.propTypes = {
+  content: _propTypes2.default.string.isRequired // eslint-disable-line
+};
+
+exports.default = ItemGroup;
 
 /***/ }),
 /* 23 */
@@ -5335,7 +5329,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var aa = __webpack_require__(1),
     n = __webpack_require__(2),
-    r = __webpack_require__(18);function ba(a, b, c, d, e, f, g, h) {
+    r = __webpack_require__(17);function ba(a, b, c, d, e, f, g, h) {
   if (!a) {
     a = void 0;if (void 0 === b) a = Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {
       var l = [c, d, e, f, g, h],
@@ -7859,7 +7853,7 @@ exports.unstable_shouldYield = function () {
 };exports.unstable_pauseExecution = function () {};exports.unstable_getFirstCallbackNode = function () {
   return d;
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 31 */
@@ -8565,7 +8559,7 @@ if (process.env.NODE_ENV !== "production") {
     exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
   })();
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(6)))
 
 /***/ }),
 /* 32 */
@@ -8579,7 +8573,7 @@ if (process.env.NODE_ENV !== "production") {
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(1);var _assign=__webpack_require__(2);var checkPropTypes=__webpack_require__(33);var scheduler=__webpack_require__(18);var tracing=__webpack_require__(35);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(1);var _assign=__webpack_require__(2);var checkPropTypes=__webpack_require__(33);var scheduler=__webpack_require__(17);var tracing=__webpack_require__(35);/**
  * Use invariant() to assert state which your program assumes to be true.
  *
  * Provide sprintf-style format (only %s is supported) and arguments
@@ -13089,7 +13083,7 @@ var _gud = __webpack_require__(43);
 
 var _gud2 = _interopRequireDefault(_gud);
 
-var _warning = __webpack_require__(10);
+var _warning = __webpack_require__(9);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -13300,12 +13294,12 @@ module.exports = exports['default'];
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var emptyFunction = __webpack_require__(8);
-var invariant = __webpack_require__(9);
-var warning = __webpack_require__(10);
+var emptyFunction = __webpack_require__(7);
+var invariant = __webpack_require__(8);
+var warning = __webpack_require__(9);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(10);
 var checkPropTypes = __webpack_require__(41);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
@@ -13826,9 +13820,9 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(9);
-  var warning = __webpack_require__(10);
-  var ReactPropTypesSecret = __webpack_require__(11);
+  var invariant = __webpack_require__(8);
+  var warning = __webpack_require__(9);
+  var ReactPropTypesSecret = __webpack_require__(10);
   var loggedTypeFailures = {};
 }
 
@@ -13891,9 +13885,9 @@ module.exports = checkPropTypes;
 
 
 
-var emptyFunction = __webpack_require__(8);
-var invariant = __webpack_require__(9);
-var ReactPropTypesSecret = __webpack_require__(11);
+var emptyFunction = __webpack_require__(7);
+var invariant = __webpack_require__(8);
+var ReactPropTypesSecret = __webpack_require__(10);
 
 module.exports = function () {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -13948,7 +13942,7 @@ var key = '__global_unique_id__';
 module.exports = function () {
   return global[key] = (global[key] || 0) + 1;
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 44 */
@@ -14306,7 +14300,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var ReactIs = __webpack_require__(3);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(12);
+var ReactPropTypesSecret = __webpack_require__(11);
 var checkPropTypes = __webpack_require__(48);
 
 var has = Function.call.bind(Object.prototype.hasOwnProperty);
@@ -14884,7 +14878,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var printWarning = function printWarning() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(12);
+  var ReactPropTypesSecret = __webpack_require__(11);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -14978,7 +14972,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(12);
+var ReactPropTypesSecret = __webpack_require__(11);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -15770,7 +15764,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var ReactIs = __webpack_require__(3);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(16);
+var ReactPropTypesSecret = __webpack_require__(15);
 var checkPropTypes = __webpack_require__(57);
 
 var has = Function.call.bind(Object.prototype.hasOwnProperty);
@@ -16348,7 +16342,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var printWarning = function printWarning() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(16);
+  var ReactPropTypesSecret = __webpack_require__(15);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -16442,7 +16436,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(16);
+var ReactPropTypesSecret = __webpack_require__(15);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -16509,7 +16503,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(19);
+var _reactRouter = __webpack_require__(18);
 
 var _reactRouterDom = __webpack_require__(4);
 
@@ -16525,10 +16519,6 @@ var _projects = __webpack_require__(64);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _media = __webpack_require__(65);
-
-var _media2 = _interopRequireDefault(_media);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -16538,8 +16528,7 @@ var App = function App() {
     null,
     _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _body2.default }),
     _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#experiences', component: _experiences2.default }),
-    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#projects', component: _projects2.default }),
-    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#media', component: _media2.default })
+    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/#projects', component: _projects2.default })
   );
 };
 
@@ -16562,7 +16551,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(4);
 
-var _header = __webpack_require__(6);
+var _header = __webpack_require__(16);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -16604,11 +16593,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _itemGroup = __webpack_require__(17);
+var _itemGroup = __webpack_require__(22);
 
 var _itemGroup2 = _interopRequireDefault(_itemGroup);
 
-var _header = __webpack_require__(6);
+var _header = __webpack_require__(16);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -16655,7 +16644,7 @@ exports.default = Experiences;
 /* 62 */
 /***/ (function(module, exports) {
 
-module.exports = {"Projects":[{"title":"Time Off Manager","subtitle":"Java, Python, React JS, Material UI","description":"I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of time off by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in python using the flask framework. The front end uses React to update the DOM. The application is in use today!"},{"title":"Instagram Clone","subtitle":"Python, Flask, React JS, Bash","description":"I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."},{"title":"MapReduce Implementation","subtitle":"Python","description":"I was member of team that implemented a fault tolerant MapReduce framework in Python. I gained experience with Python threads, processes, and sockets during the project."},{"title":"Spotify Playlist Creator","subtitle":"Java, Flask, React JS, Bootstrap","description":"I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, meduim, and long term and a playlist will be created and added to their Spotify library. The web app can be found at playlist.andrewjohnson.io."},{"title":"Lead Management System","subtitle":"Java, Spring MVC, Bootstrap","description":"I created a web application to take inputted customer information and store it securely in a NoSQL database. The information is accessed through a web interface."},{"title":"Music Genre Classfier","subtitle":"Python","description":"I worked with a team to create a musical genre classifier with data from the Spotify API. We used the Spotify API to gather audio features and audio metrics about a selection of tracks. We used bayes probability and the probability density function (PDF) to calculate the probability of a track containing certain audio features. 8 genres were included the data set and we achieved an accuracy of 54%."},{"title":"Personal Website","subtitle":"HTML, CSS, React JS, Bootstrap","description":"I created this static single page website to display my resume and other information online. I used React Routing for client side routing and created a system that reads website content from a JSON file to eliminate difficult HTML updates. I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website and I have created a similar website for another student at the University of Michigan."},{"title":"Penetration Test","subtitle":"Aircrack, Nmap, Netcat, Bash, Wireshark","description":"I was part of a team that used various computer security tools to penetration test a sample company's computer network. We hacked into their wifi network, sent spoofing emails, and found sensitive information on a sample company's server. This was a school project in the class EECS 388 - Introduction to Computer Security at the University of Michigan."},{"title":"Android Budget Tracker App","subtitle":"Java","description":"I created a budget tracking app for Android in Java. Users can create budget categories and add transactions that are tracked and stored in the device's internal memory. This was a school project in the class EECS 285 - A Programming Language at the University of Michigan."},{"title":"Language Classifier and Text Preprocesser","subtitle":"Python","description":"I created a python program to process text and predict the language of the text. The program used training data to calculate probable languages for the test data. It correctly predicted the language of 297 out of 300 data sets. Finally, tokenization can be performed on the text with stopwords and tags removed. This was part of a school project in EECS 486 - Information Retrieval and Web Search at the University of Michigan."},{"title":"Relational Database","subtitle":"C++","description":"I created a command line relational database in C++. The relational database supported common SQL commands such as CREATE, INSERT INTO, DELETE FROM, and JOIN as well as other commands GENERATE INDEX, PRINT, and REMOVE. The proram was written with space and time restrictions. This was created in EECS 281 - Data Structures and Algorithms at the University of Michigan."},{"title":"Computer Forensics","subtitle":"John the Ripper, Autopsy, Python, Tor","description":"I was part of a team that used various computer forensics tools to analyze and create a digital timeline of a suspects digital actions. We used autopsy to view hard drive contents to find hidden and encrypted files and python to find a secret online forum by brute force. This was part of a school project in EECS 388 - Introduction to Computer Security at the University of Michigan."},{"title":"Euchre Simulator","subtitle":"C++","description":"I created a command line program to simulate the card game Euchre. Up to 4 human players can play with the remaining positions filled by a computer \"player\". The focus of the project was on object orientated programming. This was a school project in the class EECS 280 - Introductory Data Structures at the University of Michigan."}],"Education":[{"title":"University of Michigan","subtitle":"Computer Science Engineering | May 2020 | 3.86/4.00 GPA","description":"At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won 1 IM Broomball championship."}],"Work Experience":[{"title":"Apple","subtitle":"Software Engineering Intern","description":"I am very excited about my next opportunity at Apple this upcoming summer. I will be a member of the Apple Maps team."},{"title":"Amazon","subtitle":"Software Development Engineering Intern","description":"Last summer, Summer 2018, I had the opportunity to intern at Amazon as a Software Development Engineering Intern. I spent the summer in Seattle, Washington on the Finance Tech team at Amazon. I had my first experience with full stack web development at Amazon and had the opportunity to build a prototype full stack web application. I designed the application and presented my design to my team during a design review. I then built the application throughout the internship as I experienced the day to day life of a software engineer. At the end of my internship I presented what I created to my team as they could determine the feasibility of building a full scale version of what I created."},{"title":"Sigma Engineering Solutions","subtitle":"Engineering Intern","description":"I had the opportunity to intern at Sigma Engineering Solutions in Summer 2016 and Summer 2017. I worked as an Engineering Intern at Sigma assistanting full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning the demolition. I drafted constructions plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."},{"title":"UNLV Entertainment Engineering","subtitle":"Research Assistant","description":"I gained first hand experience in a research setting during Summer 2015. I worked with undergraduate students at UNLV in Las Vegas as they did research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields. I also participated in the Dancing Drone project during my internship."}]}
+module.exports = {"Projects":[{"title":"Time Off Manager","subtitle":"Java, Python, React JS, Material UI","description":"I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of time off by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in python using the flask framework. The front end uses React to update the DOM. The application is in use today!"},{"title":"Instagram Clone","subtitle":"Python, Flask, React JS, Bash","description":"I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."},{"title":"MapReduce Implementation","subtitle":"Python","description":"I was member of team that implemented a fault tolerant MapReduce framework in Python. I gained experience with Python threads, processes, and sockets during the project."},{"title":"Spotify Playlist Creator","subtitle":"Java, Flask, React JS, Bootstrap","description":"I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, meduim, and long term and a playlist will be created and added to their Spotify library. The web app can be found at playlist.andrewjohnson.io."},{"title":"Lead Management System","subtitle":"Java, Spring MVC, Bootstrap","description":"I created a web application to take inputted customer information and store it securely in a NoSQL database. The information is accessed through a web interface."},{"title":"Music Genre Classfier","subtitle":"Python","description":"I worked with a team to create a musical genre classifier with data from the Spotify API. We used the Spotify API to gather audio features and audio metrics about a selection of tracks. We used bayes probability and the probability density function (PDF) to calculate the probability of a track containing certain audio features. 8 genres were included the data set and we achieved an accuracy of 54%."},{"title":"Personal Website","subtitle":"HTML, CSS, React JS, Bootstrap","description":"I created this static single page website to display my resume and other information online. I used React Routing for client side routing and created a system that reads website content from a JSON file to eliminate difficult HTML updates. I taught myself how to setup a personal website with GitHub Pages and Google Domains. This was my first experience creating a website and I have created a similar website for another student at the University of Michigan."},{"title":"Penetration Test","subtitle":"Aircrack, Nmap, Netcat, Bash, Wireshark","description":"I was part of a team that used various computer security tools to penetration test a sample company's computer network. We hacked into their wifi network, sent spoofing emails, and found sensitive information on a sample company's server. This was a school project in the class EECS 388 - Introduction to Computer Security at the University of Michigan."},{"title":"Android Budget Tracker App","subtitle":"Java","description":"I created a budget tracking app for Android in Java. Users can create budget categories and add transactions that are tracked and stored in the device's internal memory. This was a school project in the class EECS 285 - A Programming Language at the University of Michigan."},{"title":"Language Classifier and Text Preprocesser","subtitle":"Python","description":"I created a python program to process text and predict the language of the text. The program used training data to calculate probable languages for the test data. It correctly predicted the language of 297 out of 300 data sets. Finally, tokenization can be performed on the text with stopwords and tags removed. This was part of a school project in EECS 486 - Information Retrieval and Web Search at the University of Michigan."},{"title":"Relational Database","subtitle":"C++","description":"I created a command line relational database in C++. The relational database supported common SQL commands such as CREATE, INSERT INTO, DELETE FROM, and JOIN as well as other commands GENERATE INDEX, PRINT, and REMOVE. The proram was written with space and time restrictions. This was created in EECS 281 - Data Structures and Algorithms at the University of Michigan."},{"title":"Computer Forensics","subtitle":"John the Ripper, Autopsy, Python, Tor","description":"I was part of a team that used various computer forensics tools to analyze and create a digital timeline of a suspects digital actions. We used autopsy to view hard drive contents to find hidden and encrypted files and python to find a secret online forum by brute force. This was part of a school project in EECS 388 - Introduction to Computer Security at the University of Michigan."},{"title":"Euchre Simulator","subtitle":"C++","description":"I created a command line program to simulate the card game Euchre. Up to 4 human players can play with the remaining positions filled by a computer \"player\". The focus of the project was on object orientated programming. This was a school project in the class EECS 280 - Introductory Data Structures at the University of Michigan."}],"Education":[{"title":"University of Michigan","subtitle":"Computer Science Engineering | May 2020 | 3.86/4.00 GPA","description":"At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."}],"Work Experience":[{"title":"Apple","subtitle":"Software Engineering Intern","description":"This past summer I interned at Apple on the Apple Maps team. I worked on the data platform team and created multiple data pipelines to transform and store data. Additionally, I analyzed existing data and made recommendations to improve current processes."},{"title":"Amazon","subtitle":"Software Development Engineering Intern","description":"Summer 2018, I had the opportunity to intern at Amazon as a Software Development Engineering Intern. I spent the summer in Seattle, Washington on the Finance Tech team at Amazon. I had my first experience with full stack web development at Amazon and had the opportunity to build a prototype full stack web application. I designed the application and presented my design to my team during a design review. I then built the application throughout the internship as I experienced the day to day life of a software engineer. At the end of my internship I presented what I created to my team as they could determine the feasibility of building a full scale version of what I created."},{"title":"Sigma Engineering Solutions","subtitle":"Engineering Intern","description":"I had the opportunity to intern at Sigma Engineering Solutions in Summer 2016 and Summer 2017. I worked as an Engineering Intern at Sigma assistanting full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning the demolition. I drafted constructions plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."},{"title":"UNLV Entertainment Engineering","subtitle":"Research Assistant","description":"I gained first hand experience in a research setting during Summer 2015. I worked with undergraduate students at UNLV in Las Vegas as they did research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields. I also participated in the Dancing Drone project during my internship."}]}
 
 /***/ }),
 /* 63 */
@@ -16755,11 +16744,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _header = __webpack_require__(6);
+var _header = __webpack_require__(16);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _itemGroup = __webpack_require__(17);
+var _itemGroup = __webpack_require__(22);
 
 var _itemGroup2 = _interopRequireDefault(_itemGroup);
 
@@ -16800,115 +16789,6 @@ var Projects = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Projects;
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _itemGroup = __webpack_require__(17);
-
-var _itemGroup2 = _interopRequireDefault(_itemGroup);
-
-var _header = __webpack_require__(6);
-
-var _header2 = _interopRequireDefault(_header);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Media = function (_React$Component) {
-  _inherits(Media, _React$Component);
-
-  function Media() {
-    _classCallCheck(this, Media);
-
-    return _possibleConstructorReturn(this, (Media.__proto__ || Object.getPrototypeOf(Media)).apply(this, arguments));
-  }
-
-  _createClass(Media, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'container center' },
-        _react2.default.createElement(
-          'p',
-          { className: 'text-center pt-4' },
-          'Here are some cool pictures I\'ve taken.'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '1' },
-            _react2.default.createElement('img', { id: '1', src: '../DJI_0009.jpeg', className: 'rounded img-fluid', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '2' },
-            _react2.default.createElement('img', { src: '../DJI_0013.jpeg', className: 'rounded img-fluid', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '3' },
-            _react2.default.createElement('img', { src: '../DJI_0032.jpeg', className: 'rounded img-fluid', alt: '' })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row pt-4' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '4' },
-            _react2.default.createElement('img', { src: '../DJI_0040.jpeg', className: 'rounded img-fluid', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '5' },
-            _react2.default.createElement('img', { src: '../IMG_1917.jpeg', className: 'rounded img-fluid', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm', id: '6' },
-            _react2.default.createElement('img', { src: '../DJI_0014.jpeg', className: 'rounded img-fluid', alt: '' })
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          { className: 'text-center pt-3' },
-          _react2.default.createElement(
-            'a',
-            { href: '/' },
-            'Back to my website'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Media;
-}(_react2.default.Component);
-
-exports.default = Media;
 
 /***/ })
 /******/ ]);

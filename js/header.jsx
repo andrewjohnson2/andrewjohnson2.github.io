@@ -34,10 +34,6 @@ class Header extends React.Component { // eslint-disable-line
           <Link role="button" to={{pathname: '/#projects'}} name="button" className="btn btn-outline-primary m-*-auto">My
             Projects
           </Link>
-          &nbsp;
-          <Link role="button" to={{pathname: '/#media'}} name="button" className="btn btn-outline-primary m-*-auto">
-            Cool Drone Pics
-          </Link>
         </div>
       </div>
     );
