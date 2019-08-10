@@ -26,6 +26,7 @@
     "react": "==16.8.0",
     "react-autosuggest": "==9.3.4",
     "react-dom": "^16.8.6",
+    "react-responsive": "^7.0.0",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0"
   }

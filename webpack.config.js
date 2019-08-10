@@ -15,7 +15,9 @@ module.exports = {
         query: {
           // Convert ES6 syntax to ES5 for browser compatibility
           presets: ['env', 'react'],
+
         },
+        exclude: /node_modules/
       },
     ],
   },
