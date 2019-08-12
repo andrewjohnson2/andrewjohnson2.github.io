@@ -3,7 +3,7 @@
     {
       "title": "Time Off Manager",
       "subtitle": "Java, Python, React JS, Material UI",
-      "description": "I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of time off by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in python using the flask framework. The front end uses React to update the DOM. The application is in use today!"
+      "description": "I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of time off by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in python using the flask framework. The front end uses React. The application is in use today!"
     },
     {
       "title": "Instagram Clone",
@@ -87,12 +87,12 @@
     {
       "title": "Sigma Engineering Solutions",
       "subtitle": "Engineering Intern",
-      "description": "I had the opportunity to intern at Sigma Engineering Solutions in Summer 2016 and Summer 2017. I worked as an Engineering Intern at Sigma assistanting full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning the demolition. I drafted constructions plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."
+      "description": "I had the opportunity to intern at Sigma Engineering Solutions in the summer of 2016 and 2017. I worked as an Engineering Intern at Sigma assistanting full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning the demolition. I drafted constructions plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."
     },
     {
       "title": "UNLV Entertainment Engineering",
       "subtitle": "Research Assistant",
-      "description": "I gained first hand experience in a research setting during Summer 2015. I worked with undergraduate students at UNLV in Las Vegas as they did research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields. I also participated in the Dancing Drone project during my internship."
+      "description": "I gained first hand experience in a research setting in the summer of 2015. I worked with undergraduate students at UNLV in Las Vegas as they did research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields."
     }
   ]
 }
