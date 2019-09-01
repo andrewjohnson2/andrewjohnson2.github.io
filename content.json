@@ -3,7 +3,7 @@
     {
       "title": "Time Off Manager",
       "subtitle": "Java, Python, React JS, Material UI",
-      "description": "I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of time off by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in python using the flask framework. The front end uses React. The application is in use today!"
+      "description": "I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of personal and vacation days by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in Python using the Flask framework. The front end uses React. The application is in use today!"
     },
     {
       "title": "Instagram Clone",
@@ -18,7 +18,7 @@
     {
       "title": "Spotify Playlist Creator",
       "subtitle": "Java, Flask, React JS, Bootstrap",
-      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, meduim, and long term and a playlist will be created and added to their Spotify library. The web app can be found at playlist.andrewjohnson.io."
+      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, medium, and long term and a playlist will be created and added to their Spotify library. The web app can be found at playlist.andrewjohnson.io."
     },
     {
       "title": "Lead Management System",
@@ -69,7 +69,7 @@
   "Education": [
     {
       "title": "University of Michigan",
-      "subtitle": "Computer Science Engineering | May 2020 | 3.86/4.00 GPA",
+      "subtitle": "Computer Science Engineering | May 2020 | 3.88/4.00 GPA",
       "description": "At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."
     }
   ],
