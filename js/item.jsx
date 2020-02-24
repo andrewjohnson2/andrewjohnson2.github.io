@@ -16,7 +16,7 @@ class Item extends React.Component {
       <div>
         <h4>{this.state.title}</h4>
         <h6>{this.state.subtitle}</h6>
-        <div>{this.state.description}</div>
+        <div dangerouslySetInnerHTML={{ __html: this.state.description }} />
       </div>
     );
   }

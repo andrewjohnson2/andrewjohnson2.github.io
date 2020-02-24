@@ -18,7 +18,7 @@
     {
       "title": "Spotify Playlist Creator",
       "subtitle": "Java, Flask, React JS, Bootstrap",
-      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, medium, and long term and a playlist will be created and added to their Spotify library. The web app can be found at www.playlist.andrewjohnson.io."
+      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, medium, and long term and a playlist will be created and added to their Spotify library. The web app can be found at <a href=\"http://playlist.andrewjohnson.io\">http://playlist.andrewjohnson.io</a>."
     },
     {
       "title": "Lead Management System",

@@ -15,43 +15,51 @@ class Header extends React.Component { // eslint-disable-line
     return (
       <div id={'title'}>
         <MediaQuery query="(min-width: 1224px)">
-          <h1 className={`text-center ${this.state.top ? 'display-2' : ''}`} id="name">Andrew Johnson</h1>
-          <div className="text-center info h5">
+          <h1 className={`text-center ${this.state.top ? 'display-1' : ''}`} id="name">Andrew Johnson</h1>
+          <div className="text-center info h3">
             <a href='mailto::andrew@andrewjohnson.io'>
               Andrew@AndrewJohnson.io
             </a>
             &nbsp;&middot;&nbsp;
             <a href="tel:7022416598">702.241.6598</a>
-            &nbsp;&middot;&nbsp;
-            <a className="pt-2" href="AndrewJohnsonResume.pdf" target="_blank">
+            {/* &nbsp;&middot;&nbsp; */}
+            {/* <a className="pt-2" href="AndrewJohnsonResume.pdf" target="_blank">
               Resume
-            </a>
+            </a> */}
           </div>
         </MediaQuery>
         <MediaQuery query="(max-width: 1224px)">
           <h1 className={`text-center ${this.state.top ? 'display-4' : ''}`} id="name">Andrew Johnson</h1>
-          <div className="text-center info h5">
+          <div className="text-center info h3">
             <a href='mailto::andrew@andrewjohnson.io'>
               Andrew@AndrewJohnson.io
             </a>
             <div className="pt-2">
             <a href="tel:7022416598">702.241.6598</a>
-            &nbsp;&middot;&nbsp;
-            <a className="pt-2" href="AndrewJohnsonResume.pdf" target="_blank">
+            {/* &nbsp;&middot;&nbsp; */}
+            {/* <a className="pt-2" href="" target="_blank">
               Resume
-            </a>
+            </a> */}
           </div>
           </div>
         </MediaQuery>
         <div className="pt-2 text-center">
-          <Link role="button" to={{pathname: '/#experiences'}} name="button"
-                className="btn btn-outline-primary m-*-auto">
-            My Experiences
+          {/* <Link role="button" to={{ pathname: '/#projects' }} name="button" className="btn btn-outline-primary m-*-auto">
+            Projects
           </Link>
           &nbsp;
-          <Link role="button" to={{pathname: '/#projects'}} name="button" className="btn btn-outline-primary m-*-auto">
-            My Projects
-          </Link>
+          <Link role="button" to={{pathname: '/#experiences'}} name="button"
+                className="btn btn-outline-primary m-*-auto">
+            Experiences
+          </Link> */}
+          {/* &nbsp;
+          <a role="button" href='/pics.html' name="button" className="btn btn-outline-primary m-*-auto">
+            Pictures
+          </a>
+          &nbsp;
+          <a role="button" href='AndrewJohnsonResume.pdf' name="button" className="btn btn-outline-primary m-*-auto">
+            Resume
+          </a> */}
         </div>
       </div>
     );
