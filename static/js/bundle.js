@@ -1851,7 +1851,7 @@ var Header = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'text-center info h3' },
+            { className: 'text-center info h4' },
             _react2.default.createElement(
               'a',
               { href: 'mailto::andrew@andrewjohnson.io' },
@@ -1862,6 +1862,12 @@ var Header = function (_React$Component) {
               'a',
               { href: 'tel:7022416598' },
               '702.241.6598'
+            ),
+            '\xA0\xB7\xA0',
+            _react2.default.createElement(
+              'a',
+              { className: 'pt-2', href: 'AndrewJohnsonResume.pdf', target: '_blank' },
+              'Resume'
             )
           )
         ),
@@ -1875,7 +1881,7 @@ var Header = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'text-center info h3' },
+            { className: 'text-center info h4' },
             _react2.default.createElement(
               'a',
               { href: 'mailto::andrew@andrewjohnson.io' },
@@ -1892,7 +1898,28 @@ var Header = function (_React$Component) {
             )
           )
         ),
-        _react2.default.createElement('div', { className: 'pt-2 text-center' })
+        _react2.default.createElement(
+          'div',
+          { className: 'pt-2 text-center' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { role: 'button', to: { pathname: '/#projects' }, name: 'button', className: 'btn btn-outline-primary m-*-auto' },
+            'Projects'
+          ),
+          '\xA0',
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { role: 'button', to: { pathname: '/#experiences' }, name: 'button',
+              className: 'btn btn-outline-primary m-*-auto' },
+            'Experiences'
+          ),
+          '\xA0',
+          _react2.default.createElement(
+            'a',
+            { role: 'button', href: '/pics.html', name: 'button', className: 'btn btn-outline-primary m-*-auto' },
+            'Pictures'
+          )
+        )
       );
     }
   }]);
