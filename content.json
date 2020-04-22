@@ -3,12 +3,22 @@
     {
       "title": "Time Off Manager",
       "subtitle": "Java, Python, React JS, Material UI",
-      "description": "I created a web application to track vacation and personal days for a small business. I built the application to move a small business from manually keeping track of personal and vacation days by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in Python using the Flask framework. The front end uses React. The application is in use today!"
+      "description": "I built a web application to move a small business from manually keeping track of personal and vacation days by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in Python using the Flask framework. The front end uses React. The application is in use today!"
     },
     {
       "title": "Instagram Clone",
       "subtitle": "Python, Flask, React JS, Bash",
       "description": "I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."
+    },
+    {
+      "title": "ChoreBoard Mobile Application",
+      "subtitle": "React Native, Python, Flask, Expo, MySQL",
+      "description": "My team built an iOS mobile application to make household chores a better experience. We built an application that allows parents to assign chores to their kids. Once the kids complete the chores they are given rewards set by their parents. The application was built with a React Native frontend and a Python backend. See the final demo video <a href=\"https://youtu.be/qalUfjE0TKM\">here</a>."
+    },
+    {
+      "title": "Exxtreme Snowboarding Adventure",
+      "subtitle": "Vue JS, Vue Bootstrap, NPM",
+      "description": "Exxtreme Snowboarding Adventure is an online game simulating a snowboarding experience in Ann Arbor, Michigan. We built the game with the Vue JS framework. We conducted user interviews to gather feedback on our project."
     },
     {
       "title": "MapReduce Implementation",
@@ -70,7 +80,7 @@
     {
       "title": "University of Michigan",
       "subtitle": "Computer Science Engineering | May 2020 | 3.88/4.00 GPA",
-      "description": "At Michigan I have had the opportunity to take many interesting classes and pursue many of my interests. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."
+      "description": "At Michigan I have had the opportunity to take many interesting classes. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."
     }
   ],
   "Work Experience": [
