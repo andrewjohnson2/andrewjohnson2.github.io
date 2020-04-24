@@ -30,12 +30,21 @@
     gtag('config', 'UA-114762441-1');
   </script>
   <style>
-    img {
-      cursor: pointer;
+    @media (hover: hover) {
+      img {
+        cursor: pointer;
+      }
+
+      img:hover {
+        opacity: 0.5;
+      }
     }
 
-    img:hover {
-      opacity: 0.5;
+    @media (pointer: none) {
+      img {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
     }
   </style>
 
@@ -46,35 +55,35 @@
     <p class="text-center pt-4">Here are some cool pictures I've taken.</p>
     <div class="row mb-4" id="r1">
       <div class="col-sm" id="1">
-        <img src="../Picture1.jpeg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture1.jpeg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="2">
-        <img src="../Picture2.jpeg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture2.jpeg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="3">
-        <img src="../Picture3.jpeg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture3.jpeg" class="rounded img-fluid" alt="" />
       </div>
     </div>
     <div class="row mb-4" id="r2">
       <div class="col-sm" id="4">
-        <img src="../Picture4.jpeg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture4.jpeg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="5">
-        <img src="../Picture5.jpg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture5.jpg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="6">
-        <img src="../Picture6.jpeg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture6.jpeg" class="rounded img-fluid" alt="" />
       </div>
     </div>
     <div class="row mb-4" id="r3">
       <div class="col-sm" id="7">
-        <img src="../Picture7.jpg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture7.jpg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="8">
-        <img src="../Picture8.jpg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture8.jpg" class="rounded img-fluid" alt="" />
       </div>
       <div class="col-sm" id="9">
-        <img src="../Picture9.jpg" class="rounded img-fluid" alt="" />
+        <img src="../images/Picture9.jpg" class="rounded img-fluid" alt="" />
       </div>
     </div>
     <p class="text-center pt-3">
@@ -85,7 +94,7 @@
 
 
 
-  <footer class='footer'>
+  <!-- <footer class='footer'>
     <div class='container'>
       <div class='row justify-content-center'>
         <div class='col-4'>
@@ -93,7 +102,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 </body>
 
 </html>

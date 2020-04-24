@@ -1,5 +1,7 @@
-$(function() {
-  $('#1').click(function() {
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
+$(() => {
+  $('#1').click(function () {
     if ($('#2').is(':visible')) {
       adjust('#1', true);
     } else {
@@ -7,7 +9,7 @@ $(function() {
     }
   });
 
-  $('#2').click(function() {
+  $('#2').click(function () {
     if ($('#1').is(':visible')) {
       adjust('#2', true);
     } else {
@@ -15,7 +17,7 @@ $(function() {
     }
   });
 
-  $('#3').click(function() {
+  $('#3').click(function () {
     if ($('#1').is(':visible')) {
       adjust('#3', true);
     } else {
@@ -23,7 +25,7 @@ $(function() {
     }
   });
 
-  $('#4').click(function() {
+  $('#4').click(function () {
     if ($('#1').is(':visible')) {
       adjust('#4', true);
     } else {
@@ -31,7 +33,7 @@ $(function() {
     }
   });
 
-  $('#5').click(function() {
+  $('#5').click(function () {
     if ($('#1').is(':visible')) {
       adjust('#5', true);
     } else {
@@ -39,7 +41,7 @@ $(function() {
     }
   });
 
-  $('#6').click(function() {
+  $('#6').click(function () {
     if ($('#1').is(':visible')) {
       adjust('#6', true);
     } else {
@@ -77,38 +79,37 @@ $(function() {
     let i = 0;
     let tag = id_tag.substring(id_tag.search('#') + 1);
     console.log(tag);
-    console.log(enlargen)
+    console.log(enlargen);
 
     if (enlargen) {
       if (tag <= 3) {
-        $("#r2").hide();
-        $("#r3").hide();
-        $("#r1").show();
+        $('#r2').hide();
+        $('#r3').hide();
+        $('#r1').show();
       } else if (tag <= 6) {
-        $("#r2").show();
-        $("#r3").hide();
-        $("#r1").hide();
+        $('#r2').show();
+        $('#r3').hide();
+        $('#r1').hide();
       } else {
-        $("#r2").hide();
-        $("#r3").show();
-        $("#r1").hide();
+        $('#r2').hide();
+        $('#r3').show();
+        $('#r1').hide();
       }
     } else {
-      $("#r1").show();
-      $("#r2").show();
-      $("#r3").show();
+      $('#r1').show();
+      $('#r2').show();
+      $('#r3').show();
     }
 
     for (; i < tag; ++i) {
       if (enlargen) {
         $('#' + i).hide();
       } else {
-        console.log('#' + i)
+        console.log('#' + i);
         $('#' + i).show();
       }
-      
     }
-    i += 1
+    i += 1;
     for (; i < NUM_TAGS; ++i) {
       if (enlargen) {
         $('#' + i).hide();
@@ -117,6 +118,4 @@ $(function() {
       }
     }
   }
-
-
-})
+});
