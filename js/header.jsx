@@ -17,7 +17,7 @@ class Header extends React.Component { // eslint-disable-line
         <MediaQuery query="(min-width: 1224px)">
           <h1 className={`text-center ${this.state.top ? 'display-1' : ''}`} id="name">Andrew Johnson</h1>
           <div className="text-center info h4">
-            <a href='mailto::andrew@andrewjohnson.io'>
+            <a href='mailto:andrew@andrewjohnson.io'>
               Andrew@AndrewJohnson.io
             </a>
             &nbsp;&middot;&nbsp;
@@ -31,7 +31,7 @@ class Header extends React.Component { // eslint-disable-line
         <MediaQuery query="(max-width: 1224px)">
           <h1 className={`text-center ${this.state.top ? 'display-4' : ''}`} id="name">Andrew Johnson</h1>
           <div className="text-center info h4">
-            <a href='mailto::andrew@andrewjohnson.io'>
+            <a href='mailto:andrew@andrewjohnson.io'>
               Andrew@AndrewJohnson.io
             </a>
             <div className="pt-2">

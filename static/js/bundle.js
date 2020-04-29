@@ -1854,7 +1854,7 @@ var Header = function (_React$Component) {
             { className: 'text-center info h4' },
             _react2.default.createElement(
               'a',
-              { href: 'mailto::andrew@andrewjohnson.io' },
+              { href: 'mailto:andrew@andrewjohnson.io' },
               'Andrew@AndrewJohnson.io'
             ),
             '\xA0\xB7\xA0',
@@ -1884,7 +1884,7 @@ var Header = function (_React$Component) {
             { className: 'text-center info h4' },
             _react2.default.createElement(
               'a',
-              { href: 'mailto::andrew@andrewjohnson.io' },
+              { href: 'mailto:andrew@andrewjohnson.io' },
               'Andrew@AndrewJohnson.io'
             ),
             _react2.default.createElement(
