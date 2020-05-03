@@ -23,7 +23,7 @@
     {
       "title": "MapReduce Implementation",
       "subtitle": "Python",
-      "description": "I was member of team that implemented a fault tolerant MapReduce framework in Python. The program received and delegated tasks to multiple other \"machines's\". If a machine \"died\" during processing the master program would reassign the task to another machine. I gained experience with Python threads, processes, and sockets during the project."
+      "description": "I was member of team that implemented a fault tolerant MapReduce framework in Python. The program received and delegated tasks to multiple other \"machines\". If a machine \"died\" during processing the master program would reassign the task to another machine. I gained experience with Python threads, processes, and sockets during the project."
     },
     {
       "title": "Spotify Playlist Creator",
