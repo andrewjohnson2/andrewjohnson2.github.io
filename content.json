@@ -2,37 +2,37 @@
   "Projects": [
     {
       "title": "Time Off Manager",
-      "subtitle": "Java, Python, React JS, Material UI",
-      "description": "I built a web application to move a small business from manually keeping track of personal and vacation days by hand to a web application. The web application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in Python using the Flask framework. The front end uses React. The application is in use today!"
+      "subtitle": "Java, Python (Flask), React JS, Material UI",
+      "description": "I built a web application to move a small business from manually keeping track of personal and vacation days by hand to a web application. Users can create and modify time off taken by employees. Time off is automatically accrued through the application removing the need for manually counting days. The application stores data in a MySQL database hosted with AWS. The backend server and REST API is written in Python using the Flask framework and the front end uses React. Since the application is in use today, I have had the opportunity to perform many software engineering, project management, and DevOps tasks such as requirements elicitation, user interviews, implementation, beta testing, support, and bug fixes."
     },
     {
       "title": "Instagram Clone",
-      "subtitle": "Python, Flask, React JS, Bash",
+      "subtitle": "Python (Flask), React JS, Bash",
       "description": "I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."
     },
     {
       "title": "ChoreBoard Mobile Application",
-      "subtitle": "React Native, Python, Flask, Expo, MySQL",
+      "subtitle": "React Native, Python (Flask), Expo, MySQL",
       "description": "My team built an iOS mobile application to make household chores a better experience. We built an application that allows parents to assign chores to their kids. Once the kids complete the chores they are given rewards set by their parents. The application was built with a React Native frontend and a Python backend. See the final demo video <a href=\"https://youtu.be/qalUfjE0TKM\">here</a>."
     },
     {
       "title": "Exxtreme Snowboarding Adventure",
       "subtitle": "Vue JS, Vue Bootstrap, NPM",
-      "description": "Exxtreme Snowboarding Adventure is an online game simulating a snowboarding experience in Ann Arbor, Michigan. We built the game with the Vue JS framework. We conducted user interviews to gather feedback on our project."
+      "description": "Exxtreme Snowboarding Adventure is an online game simulating a snowboarding experience in Ann Arbor, Michigan. I was a member of a 4 person team that built the game with the Vue JS framework. After building the game we conducted user interviews to gather feedback on the project. "
     },
     {
       "title": "MapReduce Implementation",
       "subtitle": "Python",
-      "description": "I was member of team that implemented a fault tolerant MapReduce framework in Python. I gained experience with Python threads, processes, and sockets during the project."
+      "description": "I was member of team that implemented a fault tolerant MapReduce framework in Python. The program received and delegated tasks to multiple other \"machines's\". If a machine \"died\" during processing the master program would reassign the task to another machine. I gained experience with Python threads, processes, and sockets during the project."
     },
     {
       "title": "Spotify Playlist Creator",
-      "subtitle": "Java, Flask, React JS, Bootstrap",
-      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a certain time period. The user can chose between short, medium, and long term and a playlist will be created and added to their Spotify library. The web app can be found at <a href=\"http://playlist.andrewjohnson.io\">http://playlist.andrewjohnson.io</a>."
+      "subtitle": "Java, Python (Flask), React JS, Bootstrap",
+      "description": "I used the Spotify API to create a web app that creates a Spotify playlist with the user's top songs from a selected time period. The user can chose between short, medium, and long term and a playlist will be created and added to their Spotify library. The web app can be found at <a href=\"http://playlist.andrewjohnson.io\">http://playlist.andrewjohnson.io</a>."
     },
     {
       "title": "Lead Management System",
-      "subtitle": "Java, Spring MVC, Bootstrap",
+      "subtitle": "Java (Spring), Bootstrap",
       "description": "I created a web application to take inputted customer information and store it securely in a NoSQL database. The information is accessed through a web interface."
     },
     {
@@ -79,15 +79,15 @@
   "Education": [
     {
       "title": "University of Michigan",
-      "subtitle": "Computer Science Engineering | May 2020 | 3.88/4.00 GPA",
-      "description": "At Michigan I have had the opportunity to take many interesting classes. Some of my favorite classes I have taken are EECS 485 Web Systems, EECS 388 Introduction to Computer Security, EECS 486 Information Retrieval and Web Search, EECS 281 Data Structures and Algorithms, EECS 370 Introduction to Computer Organization, SPACE 101 Rocket Science, and ENVIRON 120 National Parks. Additionally, I have won an IM Broomball championship."
+      "subtitle": "B.S.E Computer Science Engineering  | 3.9/4.0 GPA",
+      "description": "I graduated from the University of Michigan Summa Cum Laude in May of 2020. At Michigan I had the opportunity to take many interesting classes. Some of my favorite classes were EECS 485 - Web Systems, EECS 481 - Software Engineering, EECS 388 - Introduction to Computer Security, EECS 486 - Information Retrieval and Web Search, EECS 281 - Data Structures and Algorithms, SPACE 101 - Rocket Science, and ENVIRON 120 - National Parks. Additionally, I led my an IM Broomball to a championship. After a disappointing regular season, we won 5 staight games to claim the title."
     }
   ],
   "Work Experience": [
     {
       "title": "Apple",
       "subtitle": "Software Engineering Intern",
-      "description": "This past summer I interned at Apple on the Apple Maps team. I worked on the data platform team and created multiple data pipelines to transform and store data. Additionally, I analyzed existing data and made recommendations to improve current processes."
+      "description": "In the summer of 2019, I interned at Apple on the Apple Maps team as Software Engineering Intern. I worked on the data platform team and created multiple data pipelines to transform and store data. Additionally, I analyzed existing data and made recommendations to improve current processes. Finally, I had the opportunity to participate in the Agile development model by leading daily standup meetings and performing time estimations."
     },
     {
       "title": "Amazon",
@@ -97,12 +97,12 @@
     {
       "title": "Sigma Engineering Solutions",
       "subtitle": "Engineering Intern",
-      "description": "I had the opportunity to intern at Sigma Engineering Solutions in the summer of 2016 and 2017. I worked as an Engineering Intern at Sigma assistanting full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning the demolition. I drafted constructions plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."
+      "description": "I had the opportunity to intern as an Engineering Intern at Sigma Engineering Solutions in the summers of 2016 and 2017. During my internships I assisted full time engineers with various tasks. I built 3D models in SolidWorks of demolition projects for use in bidding and planning demolitions. I drafted construction plans in AutoCAD and performed quantity calculations with Microsoft Excel. Sigma provided me a valuable experience in an engineering environment."
     },
     {
       "title": "UNLV Entertainment Engineering",
       "subtitle": "Research Assistant",
-      "description": "I gained first hand experience in a research setting in the summer of 2015. I worked with undergraduate students at UNLV in Las Vegas as they did research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields."
+      "description": "I gained first hand experience in a research setting in the summer of 2015. I worked with undergraduate students at UNLV in Las Vegas as they performed research on various projects such as the STEM Based Learning and Dancing Drone project. I tested and helped design a STEM Based Learning product targeted for younger students to increase interest in the STEM fields."
     }
   ]
 }
