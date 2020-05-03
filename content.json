@@ -8,7 +8,7 @@
     {
       "title": "Instagram Clone",
       "subtitle": "Python (Flask), React JS, Bash",
-      "description": "I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account. This was created in EECS 485 - Web Systems at the University of Michigan."
+      "description": "I was a member of a team that created a clone of Instagram in Flask. The project was done twice. Once with server side rendering and once with client side rendering. The client side version was made with a REST API and React JS. This allowed us to include features such as infinite scroll. Both versions replicate Instagram and allow users to post, comment, like, and follow other users and posts. Users can also create and delete their account."
     },
     {
       "title": "ChoreBoard Mobile Application",
